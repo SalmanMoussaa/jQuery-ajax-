@@ -5,7 +5,7 @@ $host = "localhost";
     $db_pass = null;
     $db_name = "news_db";
  
-$result = $mysqli->prepare("SELECT * FROM news;");
+$result = $mysqli->prepare("SELECT * FROM news ORDER BY date DESC");
 $result->execute();
 $array=$result->get_result();
 
