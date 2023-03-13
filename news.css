@@ -1,0 +1,18 @@
+
+    .article {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+    .news-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  

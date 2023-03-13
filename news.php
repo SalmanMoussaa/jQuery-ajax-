@@ -1,18 +1,19 @@
 <?php
 
-$host = "localhost";
+    $host = "localhost";
     $db_user = "root";
     $db_pass = null;
     $db_name = "news_db";
- 
-$result = $mysqli->prepare("SELECT * FROM news ORDER BY date DESC");
-$result->execute();
-$array=$result->get_result();
+    $mysqli = new mysqli($host, $db_user, $db_pass, $db_name);
 
-$news = array();
+    $query = $mysqli->prepare('select * from news order by datetime desc');
+    $query->execute();
 
-while($row = $array->fetch_assoc()) {
-    $news[] = $row;
-}
-echo json_encode($news);
+    $array = $query->get_result();
+    $response = [];
+    while ($a = $array->fetch_assoc()) {
+        $response[] = $a;
+    }
+    echo json_encode($response);
+
 ?>
